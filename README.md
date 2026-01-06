@@ -205,3 +205,42 @@ You might create your own images or you might only use those created by others a
 ### Step 11: Create ECS Task Defnition
 
 ### Step 12: Create an ECS Service
+
+
+### How to write a Dockerfile
+![alt text](image-1.png)
+
+**Note**: Open Docker Desktop before building Dockerfile
+* After defining baseimage, run
+    **docker build -t <imagename> .**
+
+* Commands to check working directory and role
+![alt text](image-2.png)
+
+* Using RUN command to add new objects/variables
+    * Executes any commands in a new layer on top of the current image and commits the result.
+
+* ⚠️ Important distinction (very important)
+
+* ENV in Dockerfile
+
+    * Baked into the image
+
+    * Available at build time and runtime
+
+    * ❌ Not good for secrets
+
+* environment: in docker-compose.yml
+
+    * Set at runtime
+
+    * Can differ per environment (dev / test / prod)
+
+    * ✅ Preferred for DB passwords, tokens
+
+* The **CMD** instruction sets the command to be executed when running a container from an image.
+
+* You can specify CMD instructions using shell or exec forms:
+    * CMD ["executable","param1","param2"] (exec form)
+    * CMD ["param1","param2"] (exec form, as default parameters to ENTRYPOINT)
+    * CMD command param1 param2 (shell form)
