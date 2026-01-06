@@ -21,6 +21,9 @@ COPY app.py /src/demo/
 # Expose port(s) apps should listen to
 EXPOSE 5000
 
+# Using CMD
+CMD ["flask", "run", "--host-0.0.0.0", "--port=5000"]
+
 
 
 
