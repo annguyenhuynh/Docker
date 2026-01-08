@@ -11,7 +11,5 @@ def greet():
   name = request.args.get("name")
   return render_template("greet.html", placeholder=name)
 
-
-
 if __name__ == '__main__':
   app.run(debug=True)
